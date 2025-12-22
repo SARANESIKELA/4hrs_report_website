@@ -1,0 +1,93 @@
+<svg width="580" height="600" viewBox="0 0 580 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="580" height="600" fill="#1a3050"/>
+
+  <!-- Corrugated roof pattern -->
+  <defs>
+    <pattern id="corrugation" x="0" y="0" width="20" height="600" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="10" height="600" fill="#E74C3C"/>
+      <rect x="10" y="0" width="10" height="600" fill="#C0392B"/>
+    </pattern>
+
+    <linearGradient id="roofGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E74C3C;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DC3545;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C0392B;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B5B;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#E74C3C;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main roof panel with corrugated texture -->
+  <g transform="translate(40, 100) rotate(-15)">
+    <!-- Base roof -->
+    <rect x="0" y="0" width="500" height="450" fill="url(#roofGradient)" rx="8"/>
+
+    <!-- Corrugation lines -->
+    <g opacity="0.6">
+      <line x1="0" y1="0" x2="0" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="25" y1="0" x2="25" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="75" y1="0" x2="75" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="100" y1="0" x2="100" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="125" y1="0" x2="125" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="150" y1="0" x2="150" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="175" y1="0" x2="175" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="200" y1="0" x2="200" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="225" y1="0" x2="225" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="250" y1="0" x2="250" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="275" y1="0" x2="275" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="300" y1="0" x2="300" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="325" y1="0" x2="325" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="350" y1="0" x2="350" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="375" y1="0" x2="375" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="400" y1="0" x2="400" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="425" y1="0" x2="425" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="450" y1="0" x2="450" y2="450" stroke="#C0392B" stroke-width="2"/>
+      <line x1="475" y1="0" x2="475" y2="450" stroke="#FF6B5B" stroke-width="1"/>
+      <line x1="500" y1="0" x2="500" y2="450" stroke="#C0392B" stroke-width="2"/>
+    </g>
+
+    <!-- Horizontal lines for corrugation -->
+    <g opacity="0.3">
+      <line x1="0" y1="50" x2="500" y2="50" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="100" x2="500" y2="100" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="150" x2="500" y2="150" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="200" x2="500" y2="200" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="250" x2="500" y2="250" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="300" x2="500" y2="300" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="350" x2="500" y2="350" stroke="#C0392B" stroke-width="1"/>
+      <line x1="0" y1="400" x2="500" y2="400" stroke="#C0392B" stroke-width="1"/>
+    </g>
+
+    <!-- Highlight on top -->
+    <rect x="0" y="0" width="500" height="100" fill="url(#highlight)" rx="8"/>
+
+    <!-- Shadow/depth effect -->
+    <rect x="0" y="400" width="500" height="50" fill="#000000" opacity="0.2"/>
+  </g>
+
+  <!-- White pipe/gutter element -->
+  <g transform="translate(320, 200) rotate(-15)">
+    <!-- Main pipe body -->
+    <ellipse cx="30" cy="0" rx="30" ry="15" fill="#E8E8E8"/>
+    <rect x="0" y="0" width="60" height="380" fill="#F5F5F5"/>
+    <ellipse cx="30" cy="380" rx="30" ry="15" fill="#D0D0D0"/>
+
+    <!-- Pipe highlights -->
+    <rect x="5" y="0" width="15" height="380" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="45" y="0" width="8" height="380" fill="#C0C0C0" opacity="0.4"/>
+
+    <!-- Pipe segments -->
+    <line x1="0" y1="100" x2="60" y2="100" stroke="#C0C0C0" stroke-width="2"/>
+    <line x1="0" y1="200" x2="60" y2="200" stroke="#C0C0C0" stroke-width="2"/>
+    <line x1="0" y1="300" x2="60" y2="300" stroke="#C0C0C0" stroke-width="2"/>
+  </g>
+
+  <!-- Additional lighting and shadow effects -->
+  <rect x="0" y="0" width="580" height="200" fill="url(#highlight)" opacity="0.1"/>
+  <rect x="0" y="400" width="580" height="200" fill="#000000" opacity="0.1"/>
+</svg>
