@@ -1,22 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Login.css";
+import loginPic from "../../assets/images/login_pic.jpg";
+import logo from "../../assets/images/logo.png";
 
 function SignupStepOne() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
     // Store data and navigate to step two
     console.log("Signup Step One:", { fullName, email, password });
     navigate("/signup/details");
@@ -27,13 +23,7 @@ function SignupStepOne() {
       <div className="login-left">
         <div className="login-left-content">
           <div className="logo">
-            <div className="logo-icon">
-              <div className="logo-square"></div>
-              <div className="logo-text">
-                <span className="logo-hours">4hrs</span>
-                <span className="logo-report">Report</span>
-              </div>
-            </div>
+            <img src={logo} alt="4hrs Report" className="logo-image" />
           </div>
 
           <h1 className="main-heading">
@@ -49,17 +39,17 @@ function SignupStepOne() {
           </p>
 
           <div className="roof-image">
-            <img src="/roof-image.svg" alt="Red corrugated roofing" />
+            <img src={loginPic} alt="Red corrugated roofing" />
           </div>
         </div>
       </div>
 
       <div className="login-right">
         <div className="login-form-container">
-          <h2 className="welcome-heading">Create Account</h2>
+          <h2 className="welcome-heading">Create An Account</h2>
           <p className="welcome-text">
-            Sign up to access detailed reports on roofing, walls, and building
-            structures. Join us today!
+            Create an account to explore, purchase, and manage detailed reports
+            on roofing, walls, and building structures with ease.
           </p>
 
           <form onSubmit={handleSubmit} className="login-form">
@@ -90,7 +80,7 @@ function SignupStepOne() {
                 </svg>
                 <input
                   type="text"
-                  placeholder="Enter your full name"
+                  placeholder="Enter full name"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   required
@@ -125,7 +115,7 @@ function SignupStepOne() {
                 </svg>
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -160,7 +150,7 @@ function SignupStepOne() {
                 </svg>
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder="Create password"
+                  placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -243,118 +233,12 @@ function SignupStepOne() {
               </div>
             </div>
 
-            <div className="input-group">
-              <div className="input-wrapper">
-                <svg
-                  className="input-icon"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.8333 9.16667H4.16667C3.24619 9.16667 2.5 9.91286 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91286 16.7538 9.16667 15.8333 9.16667Z"
-                    stroke="#64748B"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M5.83333 9.16667V5.83333C5.83333 4.72826 6.27232 3.66846 7.05372 2.88706C7.83512 2.10565 8.89493 1.66667 10 1.66667C11.1051 1.66667 12.1649 2.10565 12.9463 2.88706C13.7277 3.66846 14.1667 4.72826 14.1667 5.83333V9.16667"
-                    stroke="#64748B"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <input
-                  type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Confirm password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-                <button
-                  type="button"
-                  className="toggle-password"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  aria-label="Toggle confirm password visibility"
-                >
-                  {showConfirmPassword ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.5 2.5L17.5 17.5"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M8.81667 8.81667C8.53785 9.09644 8.31565 9.42749 8.16255 9.79202C8.00944 10.1566 7.92835 10.5486 7.92383 10.9453C7.91932 11.3419 7.99149 11.7358 8.13628 12.1039C8.28107 12.472 8.49568 12.808 8.76824 13.0931C9.0408 13.3783 9.36589 13.6073 9.72495 13.767C10.084 13.9267 10.4706 14.0141 10.8633 14.0238C11.256 14.0334 11.6464 13.9652 12.0133 13.8233C12.3803 13.6814 12.7167 13.4686 13.0033 13.1967"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M4.89167 4.34167C3.11833 5.57583 1.675 7.51083 0.833333 10C2.5 14.5833 6.03333 17.5 10 17.5C11.775 17.5 13.4417 17.0008 14.8917 16.1583"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M17.2583 13.7917C18.275 12.5583 19.0083 11.2917 19.1667 10C17.5 5.41667 13.9667 2.5 10 2.5C9.45 2.5 8.90833 2.55 8.38333 2.64167"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.9167 10.5917C12.7861 11.2028 12.4696 11.7593 12.0092 12.1862C11.5489 12.613 10.9666 12.8903 10.3417 12.9825"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0.833333 10C0.833333 10 4.16667 3.33333 10 3.33333C15.8333 3.33333 19.1667 10 19.1667 10C19.1667 10 15.8333 16.6667 10 16.6667C4.16667 16.6667 0.833333 10 0.833333 10Z"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
-                        stroke="#64748B"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </button>
-              </div>
+            <div className="referral-link">
+              <Link to="/referral">Have Referral Code?</Link>
             </div>
 
             <button type="submit" className="signin-button">
-              Continue
+              Signup
             </button>
 
             <div className="signup-link">

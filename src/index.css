@@ -1,88 +1,172 @@
+/* Import Clash Grotesk font */
+@import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300,1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Root font setup */
-  :root {
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      sans-serif;
+}
+
+/* Root font setup with design system */
+:root {
+    /* Fonts */
+    --font-primary:
+        "Clash Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    --font-secondary:
+        "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    /* Primary Colors */
+    --color-primary: #03273f;
+    --color-primary-dark: #010101;
+    --color-primary-light: #ffffff;
+
+    /* Secondary Colors */
+    --color-secondary: #fe0100;
+    --color-secondary-dark: #666666;
+
+    /* Blue Gradients */
+    --color-blue-100: #03273f;
+    --color-blue-90: #1c3d56;
+    --color-blue-80: #35536d;
+    --color-blue-70: #4e6984;
+    --color-blue-60: #678099;
+    --color-blue-50: #8097ae;
+    --color-blue-40: #99aec3;
+    --color-blue-30: #b3c5d8;
+    --color-blue-20: #ccdced;
+    --color-blue-10: #e5f3ff;
+
+    /* Red Gradients */
+    --color-red-100: #fe0100;
+    --color-red-90: #4d0100;
+    --color-red-80: #710100;
+    --color-red-70: #950100;
+    --color-red-60: #b90100;
+    --color-red-50: #de0100;
+    --color-red-40: #ff3433;
+    --color-red-30: #ff6867;
+    --color-red-20: #ff9c9b;
+    --color-red-10: #ffd0cf;
+
+    font-family: var(--font-primary);
     line-height: 1.5;
     font-weight: 400;
-  
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  /* 🔒 Lock page height (DESKTOP) */
-  html {
+}
+
+/* Lock page height (DESKTOP) */
+html {
     height: 100%;
-  }
-  
-  body {
+    scroll-behavior: smooth;
+}
+
+body {
     min-width: 320px;
     height: 100vh;
-    overflow: hidden;          /* ✅ stop page scroll */
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: #ffffff;
-    color: #1e293b;
-  }
-  
-  /* React root */
-  #root {
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+}
+
+/* React root */
+#root {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Common elements */
-  a {
+    min-height: 100vh;
+}
+
+/* Common elements */
+a {
     text-decoration: none;
     color: inherit;
-  }
-  
-  button {
+}
+
+button {
     font-family: inherit;
     cursor: pointer;
-  }
-  
-  input {
+    border: none;
+    outline: none;
+}
+
+input {
     font-family: inherit;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
     font-weight: 600;
-  }
-  
-  p {
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h5 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+p {
     margin: 0;
-  }
-  
-  /* 📱 Allow scroll ONLY on mobile */
-  @media (max-width: 768px) {
-    body,
-    #root {
-      height: auto;
-      overflow: auto;
+    font-family: var(--font-primary);
+}
+
+/* Utility classes */
+.body-copy {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.label {
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.mini-label {
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
     }
-  }
-  
+}

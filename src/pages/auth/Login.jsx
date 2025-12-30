@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Login.css";
+import loginPic from "../../assets/images/login_pic.jpg";
+import logo from "../../assets/images/logo.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,15 +19,9 @@ function Login() {
     <div className="login-container">
       <div className="login-left">
         <div className="login-left-content">
-          <div className="logo">
-            <div className="logo-icon">
-              <div className="logo-square"></div>
-              <div className="logo-text">
-                <span className="logo-hours">4hrs</span>
-                <span className="logo-report">Report</span>
-              </div>
-            </div>
-          </div>
+          <Link to="/" className="logo">
+            <img src={logo} alt="4hrs Report" className="logo-image" />
+          </Link>
 
           <h1 className="main-heading">
             Smart, Reliable Reports for
@@ -40,7 +36,7 @@ function Login() {
           </p>
 
           <div className="roof-image">
-            <img src="/roof-image.svg" alt="Red corrugated roofing" />
+            <img src={loginPic} alt="Red corrugated roofing" />
           </div>
         </div>
       </div>

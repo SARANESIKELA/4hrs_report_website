@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Login.css";
+import loginPic from "../../assets/images/login_pic.jpg";
+import logo from "../../assets/images/logo.png";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -18,13 +20,7 @@ function ForgotPassword() {
       <div className="login-left">
         <div className="login-left-content">
           <div className="logo">
-            <div className="logo-icon">
-              <div className="logo-square"></div>
-              <div className="logo-text">
-                <span className="logo-hours">4hrs</span>
-                <span className="logo-report">Report</span>
-              </div>
-            </div>
+            <img src={logo} alt="4hrs Report" className="logo-image" />
           </div>
 
           <h1 className="main-heading">
@@ -40,7 +36,7 @@ function ForgotPassword() {
           </p>
 
           <div className="roof-image">
-            <img src="/roof-image.svg" alt="Red corrugated roofing" />
+            <img src={loginPic} alt="Red corrugated roofing" />
           </div>
         </div>
       </div>
@@ -104,8 +100,9 @@ function ForgotPassword() {
             <>
               <h2 className="welcome-heading">Check Your Email</h2>
               <p className="welcome-text">
-                We've sent password reset instructions to <strong>{email}</strong>.
-                Please check your inbox and follow the link to reset your password.
+                We've sent password reset instructions to{" "}
+                <strong>{email}</strong>. Please check your inbox and follow the
+                link to reset your password.
               </p>
 
               <div className="login-form">
