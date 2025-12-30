@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Login.css";
-import loginPic from "../../assets/images/login_pic.jpg";
-import logo from "../../assets/images/logo.png";
+import loginPic from "/assets/images/login_pic.jpg";
+import logo from "/assets/images/logo.png";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
