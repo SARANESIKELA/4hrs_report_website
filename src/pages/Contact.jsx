@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "assets/images/logo.png";
 import "../styles/Contact.css";
+import headerBanner from "assets/images/header_banner.png";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -58,16 +59,18 @@ function Contact() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="contact-hero">
-        <div className="contact-hero-content">
-          <h1>Get in Touch</h1>
-          <p>
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
-          </p>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="contact-hero">
+  <img src={headerBanner} alt="Contact - 4hrs Report" />
+  <div className="contact-hero-content">
+    <h1>Contact</h1>
+    <p>
+      Have questions? We'd love to hear from you. Send us a message and we'll
+      respond as soon as possible.
+    </p>
+  </div>
+</section>
+
 
       {/* Contact Content */}
       <section className="contact-content">

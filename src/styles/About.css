@@ -19,22 +19,24 @@
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
+    padding: 0 3rem;          /* more left-right spacing */
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | nav | button */
     align-items: center;
-    justify-content: space-between;
 }
+
 
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .logo img {
-    height: 45px;
+    height: 52px;            /* increased logo size */
     width: auto;
-    object-fit: contain;
 }
+
 
 .nav {
     display: flex;
@@ -104,37 +106,61 @@
     transform: translateX(4px);
 }
 
-/* Hero Section */
+/* ================================
+   About Hero Section (Image Banner)
+================================ */
+/* ================================
+   About Hero Section (Image Only)
+================================ */
+/* ================================
+   About Hero Section (Contained Card)
+================================ */
 .about-hero {
+    max-width: 1750px;        /* same as header */
+    margin: 2rem auto;       /* spacing from edges */
+    height: 420px;
+    border-radius: 24px;     /* smooth corners */
+    overflow: hidden;
+    position: relative;
+    background-color: #000;  /* fallback */
+}
+
+/* Banner image */
+.about-hero img {
     width: 100%;
-    background: linear-gradient(
-        135deg,
-        var(--color-blue-100) 0%,
-        var(--color-blue-80) 100%
-    );
-    padding: 6rem 2rem;
-    text-align: center;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Text on image */
 .about-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 3rem;         /* inner spacing */
+    color: #ffffff;
 }
 
+/* Title */
 .about-hero h1 {
     font-family: var(--font-primary);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
     margin-bottom: 1rem;
 }
 
+/* Subtitle */
 .about-hero p {
     font-family: var(--font-primary);
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
+    max-width: 720px;
 }
+
 
 /* Main Content */
 .about-content {
@@ -290,7 +316,9 @@
     }
 
     .about-hero {
-        padding: 4rem 1.5rem;
+        height: 360px;
+        margin: 1.5rem auto;
+        border-radius: 20px;
     }
 
     .about-content {
@@ -319,6 +347,16 @@
     .login-btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.875rem;
+    }
+
+    .about-hero {
+        height: 300px;
+        margin: 1rem;
+        border-radius: 16px;
+    }
+
+    .about-hero-content {
+        padding: 0 1.25rem;
     }
 
     .about-hero h1 {

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "assets/images/logo.png";
 import "../styles/Pricing.css";
+import headerBanner from "assets/images/header_banner.png";
+
 
 function Pricing() {
   return (
@@ -35,16 +37,18 @@ function Pricing() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pricing-hero">
-        <div className="pricing-hero-content">
-          <h1>Simple, Transparent Pricing</h1>
-          <p>
-            Choose the plan that works best for you. All plans include our
-            4-hour delivery guarantee.
-          </p>
-        </div>
-      </section>
+
+{/* Hero Section */}
+<section className="pricing-hero">
+  <img src={headerBanner} alt="Pricing - 4hrs Report" />
+  <div className="pricing-hero-content">
+    <h1>Pricing</h1>
+    <p>
+      Simple, transparent pricing. Choose the plan that fits your business.
+    </p>
+  </div>
+</section>
+
 
       {/* Pricing Cards */}
       <section className="pricing-content">

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "assets/images/logo.png";
 import "../styles/About.css";
+import headerBanner from "assets/images/header_banner.png";
+
 
 function About() {
   return (
@@ -36,15 +38,15 @@ function About() {
       </header>
 
       {/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero-content">
-          <h1>About 4hrs Report</h1>
-          <p>
-            Your trusted partner for fast, accurate, and professional roof
-            measurement reports
-          </p>
-        </div>
-      </section>
+{/* Hero Section with Image */}
+<section className="about-hero">
+  <img src={headerBanner} alt="About 4hrs Report" />
+  <div className="about-hero-content">
+    <h1>About Us</h1>
+    <p>Your trusted partner for fast, accurate, and professional roof measurement reports</p>
+  </div>
+</section>
+
 
       {/* Main Content */}
       <section className="about-content">

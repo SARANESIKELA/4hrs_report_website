@@ -105,35 +105,53 @@
 }
 
 /* Hero Section */
+/* ================================
+   Pricing Hero Section (Image Banner)
+================================ */
 .pricing-hero {
+    max-width: 1750px;
+    margin: 2rem auto;
+    height: 420px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background-color: #000; /* fallback */
+}
+
+/* Banner image */
+.pricing-hero img {
     width: 100%;
-    background: linear-gradient(
-        135deg,
-        var(--color-blue-100) 0%,
-        var(--color-blue-80) 100%
-    );
-    padding: 6rem 2rem;
-    text-align: center;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Text on banner */
 .pricing-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 3rem;
+    color: #ffffff;
 }
 
+/* Title */
 .pricing-hero h1 {
     font-family: var(--font-primary);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
     margin-bottom: 1rem;
 }
 
+/* Subtitle */
 .pricing-hero p {
     font-family: var(--font-primary);
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
+    max-width: 720px;
 }
 
 /* Pricing Content */
@@ -452,7 +470,9 @@
     }
 
     .pricing-hero {
-        padding: 4rem 1.5rem;
+        height: 360px;
+        margin: 1.5rem auto;
+        border-radius: 20px;
     }
 
     .pricing-content {
@@ -496,6 +516,16 @@
     .login-btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.875rem;
+    }
+
+    .pricing-hero {
+        height: 300px;
+        margin: 1rem;
+        border-radius: 16px;
+    }
+
+    .pricing-hero-content {
+        padding: 0 1.25rem;
     }
 
     .pricing-hero h1 {
