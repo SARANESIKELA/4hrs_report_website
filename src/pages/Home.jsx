@@ -7,12 +7,16 @@ import logo from "/assets/images/logo.png";
 import whitelogo from "/assets/images/white_logo.png";
 import homeImage from "/assets/images/home.png";
 import homeImage1 from "../assets/images/home_img1.png";
+import Industryprofile from "../assets/images/industry_profile.png";
 import banner1 from "../assets/images/banner_1.png";
 import banner2 from "../assets/images/banner_2.png";
 import banner3 from "../assets/images/banner_3.png";
 import arrowIcon from "/assets/icons/arrow-up-right.png";
 import blogImage1 from "../assets/images/home_img1.png";
 import blogImage2 from "../assets/images/home_img1.png";
+import esxIcon from "../assets/icons/esx.png";
+import xmlIcon from "../assets/icons/xml.png";
+import pdfIcon from "../assets/icons/pdf.png";
 import "../styles/Home.css";
 
 // Sticky Card Component
@@ -118,6 +122,9 @@ function Home() {
               <Link to="/about" className="nav-link">
                 About Us
               </Link>
+              <Link to="/blogs" className="nav-link">
+                Blogs
+              </Link>
               <Link to="/pricing" className="nav-link">
                 Pricing
               </Link>
@@ -138,89 +145,83 @@ function Home() {
 
         {/* ================= Hero Section ================= */}
         <section className="hero-section">
-          <div className="container">
-            <div className="hero">
-              <img
-                src={homeImage}
-                alt="Roof"
-                className="hero-background-image"
-              />
+          <div className="hero">
+            <img src={homeImage} alt="Roof" className="hero-background-image" />
 
-              <div className="hero-overlay">
-                <div className="hero-content">
-                  <h1 className="hero-title">
-                    Fast & Accurate Roof Measurement Reports in just 4 hours
-                  </h1>
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="hero-title">
+                  Fast & Accurate Roof Measurement Reports in just 4 hours
+                </h1>
 
-                  <p className="hero-description">
-                    Access professionally curated reports on roofing, walls, and
-                    building structures to make informed decisions with accurate
-                    insights and expert analysis.
-                  </p>
+                <p className="hero-description">
+                  Access professionally curated reports on roofing, walls, and
+                  building structures to make informed decisions with accurate
+                  insights and expert analysis.
+                </p>
 
-                  <button className="order-btn">
-                    <span className="btn-text">Order Now</span>
-                    <span className="btn-icon">
-                      <img src={arrowIcon} alt="Arrow" />
-                    </span>
-                  </button>
+                <button className="order-btn">
+                  <span className="btn-text">Order Now</span>
+                  <span className="btn-icon">
+                    <img src={arrowIcon} alt="Arrow" />
+                  </span>
+                </button>
+              </div>
+
+              <div className="hero-form-card">
+                <h2 className="form-title">Choose Your Service & Pricing</h2>
+                <p className="form-description">
+                  Select the service and pricing option that best fits your
+                  project needs.
+                </p>
+
+                <div className="form-group">
+                  <select
+                    className="form-select"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <option value="">Select Category*</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="industrial">Industrial</option>
+                  </select>
                 </div>
 
-                <div className="hero-form-card">
-                  <h2 className="form-title">Choose Your Service & Pricing</h2>
-                  <p className="form-description">
-                    Select the service and pricing option that best fits your
-                    project needs.
-                  </p>
-
-                  <div className="form-group">
-                    <select
-                      className="form-select"
-                      value={category}
-                      onChange={(e) => setCategory(e.target.value)}
-                    >
-                      <option value="">Select Category*</option>
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="industrial">Industrial</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <select
-                      className="form-select"
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                    >
-                      <option value="">Select Service*</option>
-                      <option value="roof-measurement">Roof Measurement</option>
-                      <option value="wall-measurement">Wall Measurement</option>
-                      <option value="full-building">
-                        Full Building Analysis
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <select
-                      className="form-select"
-                      value={addons}
-                      onChange={(e) => setAddons(e.target.value)}
-                    >
-                      <option value="">Select Addons*</option>
-                      <option value="3d-model">3D Model</option>
-                      <option value="detailed-report">Detailed Report</option>
-                      <option value="expedited">Expedited Delivery</option>
-                    </select>
-                  </div>
-
-                  <button className="form-order-btn">
-                    <span className="btn-text">Order Now</span>
-                    <span className="btn-icon">
-                      <img src={arrowIcon} alt="Arrow" />
-                    </span>
-                  </button>
+                <div className="form-group">
+                  <select
+                    className="form-select"
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                  >
+                    <option value="">Select Service*</option>
+                    <option value="roof-measurement">Roof Measurement</option>
+                    <option value="wall-measurement">Wall Measurement</option>
+                    <option value="full-building">
+                      Full Building Analysis
+                    </option>
+                  </select>
                 </div>
+
+                <div className="form-group">
+                  <select
+                    className="form-select"
+                    value={addons}
+                    onChange={(e) => setAddons(e.target.value)}
+                  >
+                    <option value="">Select Addons*</option>
+                    <option value="3d-model">3D Model</option>
+                    <option value="detailed-report">Detailed Report</option>
+                    <option value="expedited">Expedited Delivery</option>
+                  </select>
+                </div>
+
+                <button className="form-order-btn">
+                  <span className="btn-text">Order Now</span>
+                  <span className="btn-icon">
+                    <img src={arrowIcon} alt="Arrow" />
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -313,70 +314,114 @@ function Home() {
         {/* ================= Industry Leaders Section ================= */}
         <section className="industry-leaders-section">
           <div className="container">
-            <div className="industry-leaders-grid">
-              {/* Left Side - Image */}
-              <div className="industry-leaders-image">
-                <img src={homeImage1} alt="Roofing Professional" />
-                <div className="industry-badge">
-                  <h3>4 Hours</h3>
-                  <p>Guaranteed Delivery</p>
-                </div>
-              </div>
-
-              {/* Right Side - Content */}
-              <div className="industry-leaders-content">
-                <h2 className="industry-leaders-title">
-                  Industry Leaders in Speed & Accuracy
-                </h2>
-                <p className="industry-leaders-description">
-                  We provide roof measurement reports within 4 hours using the
-                  latest technology. Our reports are backed by advanced tools,
-                  expert analysis, and a commitment to accuracy—helping you bid
-                  confidently, build efficiently, and stay ahead in the roofing
-                  industry.
-                </p>
-
-                <div className="industry-features">
-                  <div className="industry-feature-item">
-                    <div className="feature-icon red">🚀</div>
-                    <div className="feature-text">
-                      <h4>Fast Turnaround</h4>
-                      <p>
-                        Get reports delivered within 4 hours to accelerate your
-                        workflow.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="industry-feature-item">
-                    <div className="feature-icon red">📊</div>
-                    <div className="feature-text">
-                      <h4>Consistent Results</h4>
-                      <p>
-                        Reliable, accurate measurements you can trust every
-                        time.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="industry-feature-item">
-                    <div className="feature-icon red">⏰</div>
-                    <div className="feature-text">
-                      <h4>4-Hour Delivery</h4>
-                      <p>
-                        Quick and efficient service to meet tight project
-                        deadlines.
-                      </p>
-                    </div>
+            <div className="industry-leaders-card">
+              <div className="industry-leaders-grid">
+                {/* Left Side - Image */}
+                <div className="industry-leaders-image">
+                  <img src={Industryprofile} alt="Roofing Professional" />
+                  <div className="industry-badge">
+                    <h3>4 Hours</h3>
+                    <p>Guaranteed Delivery</p>
                   </div>
                 </div>
 
-                <button className="industry-order-btn">
-                  <span className="btn-text">Order Now</span>
-                  <span className="btn-icon">
-                    <img src={arrowIcon} alt="Arrow" />
-                  </span>
-                </button>
+                {/* Right Side - Content */}
+                <div className="industry-leaders-content">
+                  <h2 className="industry-leaders-title">
+                    Industry Leaders in Speed & Accuracy
+                  </h2>
+                  <p className="industry-leaders-description">
+                    At 4hrsreport, we understand that time is money in the
+                    roofing industry. That's why we deliver precise roof
+                    measurement reports within 4 hours. Whether you are a
+                    roofing contractor, insurance adjuster, or property manager,
+                    our detailed reports help you save time, reduce errors, and
+                    focus on what matters most - growing your business.
+                  </p>
+
+                  <div className="industry-features">
+                    <div className="industry-feature-item">
+                      <div className="feature-icon red">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div className="feature-text">
+                        <h4>Accurate Measurements</h4>
+                        <p>
+                          Powered by high-quality aerial and satellite data.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="industry-feature-item">
+                      <div className="feature-icon red">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div className="feature-text">
+                        <h4>Professional Reports</h4>
+                        <p>Easy-to-read, detailed, and contractor-ready.</p>
+                      </div>
+                    </div>
+
+                    <div className="industry-feature-item">
+                      <div className="feature-icon red">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div className="feature-text">
+                        <h4>4 Hour Delivery</h4>
+                        <p>Get your roof reports fast without delays.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button className="industry-order-btn">
+                    <span className="btn-text">Order Now</span>
+                    <span className="btn-icon">
+                      <img src={arrowIcon} alt="Arrow" />
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -385,25 +430,29 @@ function Home() {
         {/* ================= Statistics Section ================= */}
         <section className="statistics-section">
           <div className="container">
-            <div className="statistics-grid">
-              <div className="stat-item">
-                <h3 className="stat-number">100K+</h3>
-                <p className="stat-label">Reports Delivered</p>
-              </div>
+            <div className="statistics-wrapper">
+              <div className="statistics-card">
+                <div className="statistics-grid">
+                  <div className="stat-item">
+                    <h3 className="stat-number">100K+</h3>
+                    <p className="stat-label">Reports Delivered</p>
+                  </div>
 
-              <div className="stat-item">
-                <h3 className="stat-number">24/7</h3>
-                <p className="stat-label">Support Centers</p>
-              </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">24/7</h3>
+                    <p className="stat-label">Support Centers</p>
+                  </div>
 
-              <div className="stat-item">
-                <h3 className="stat-number">99.8%</h3>
-                <p className="stat-label">Accuracy Rate</p>
-              </div>
+                  <div className="stat-item">
+                    <h3 className="stat-number">99.8%</h3>
+                    <p className="stat-label">Accuracy Rate</p>
+                  </div>
 
-              <div className="stat-item">
-                <h3 className="stat-number">7+</h3>
-                <p className="stat-label">Regions Supported</p>
+                  <div className="stat-item">
+                    <h3 className="stat-number">7+</h3>
+                    <p className="stat-label">Regions Supported</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -412,109 +461,117 @@ function Home() {
         {/* ================= Pricing Section ================= */}
         <section className="pricing-section">
           <div className="container">
-            <div className="pricing-header">
-              <h2 className="pricing-title">Simple, Transparent Pricing</h2>
-              <p className="pricing-subtitle">
-                For Us What May Be Complex
-                <br />
-                but We've packaged our roof measurement services into
-                <br />
-                straightforward pricing that scales with your project needs.
-              </p>
-            </div>
-
-            <div className="pricing-grid">
-              {/* Premium PDF */}
-              <div className="pricing-card">
-                <div className="pricing-icon">📄</div>
-                <h3 className="pricing-card-title">Premium PDF</h3>
-                <div className="pricing-amount">
-                  <span className="currency">$</span>
-                  <span className="price">12</span>
-                  <span className="period">/order</span>
+            <div className="pricing-wrapper">
+              <div className="pricing-header">
+                <div className="pricing-header-left">
+                  <h2 className="pricing-title">Simple, Transparent Pricing</h2>
                 </div>
-                <p className="pricing-description">
-                  Premium PDF delivers highly detailed roof measurement reports
-                  for a-z builders and contractors.
-                </p>
-
-                <ul className="pricing-features">
-                  <li>✓ Small roofed image</li>
-                  <li>✓ Explosive compatible</li>
-                  <li>✓ Attempt photo delivery</li>
-                  <li>✓ Flat surfaces</li>
-                  <li>✓ Bulk orders</li>
-                  <li>✓ PDF files same as SEO</li>
-                </ul>
-
-                <button className="pricing-btn">
-                  <span className="btn-text">Add to Cart</span>
-                  <span className="btn-icon">
-                    <img src={arrowIcon} alt="Arrow" />
-                  </span>
-                </button>
+                <div className="pricing-header-right">
+                  <p className="pricing-subtitle">
+                    No hidden fees, no surprises.
+                    <br />
+                    Just fast, accurate roof reports at competitive prices.
+                  </p>
+                </div>
               </div>
 
-              {/* XML */}
-              <div className="pricing-card">
-                <div className="pricing-icon">📑</div>
-                <h3 className="pricing-card-title">XML</h3>
-                <div className="pricing-amount">
-                  <span className="currency">$</span>
-                  <span className="price">15</span>
-                  <span className="period">/order</span>
+              <div className="pricing-grid">
+                {/* ESX */}
+                <div className="pricing-card">
+                  <div className="pricing-icon-img">
+                    <img src={esxIcon} alt="ESX" />
+                  </div>
+                  <h3 className="pricing-card-title">ESX</h3>
+                  <div className="pricing-amount">
+                    <span className="price">$12</span>
+                    <span className="period">Starting</span>
+                  </div>
+                  <p className="pricing-description">
+                    Xactimate™ compatible sketches for adjusters and insurance
+                    providers.
+                  </p>
+
+                  <ul className="pricing-features">
+                    <li>✓ Sketch within 4 hours*</li>
+                    <li>✓ Xactimate compatible</li>
+                    <li>✓ 2 hours rush delivery</li>
+                    <li>✓ PDF addon</li>
+                    <li>✓ Customised PDFs</li>
+                    <li>✓ Bulk orders</li>
+                    <li>✓ ESX Walls starts at $20</li>
+                    <li>✓ 24/7 support</li>
+                  </ul>
+
+                  <button className="pricing-btn">
+                    <span className="btn-text">Order Now</span>
+                    <span className="btn-icon">
+                      <img src={arrowIcon} alt="Arrow" />
+                    </span>
+                  </button>
                 </div>
-                <p className="pricing-description">
-                  XML Reports deliver structured data for system integration Of
-                  XML extend for machine readable data.
-                </p>
 
-                <ul className="pricing-features">
-                  <li>✓ 100% compatible with estimators</li>
-                  <li>✓ Aerial custom Esware</li>
-                  <li>✓ All included with Premium</li>
-                  <li>✓ Multiple format support</li>
-                  <li>✓ EagleView format support</li>
-                  <li>✓ 25/7/365 support</li>
-                </ul>
+                {/* XML */}
+                <div className="pricing-card">
+                  <div className="pricing-icon-img">
+                    <img src={xmlIcon} alt="XML" />
+                  </div>
+                  <h3 className="pricing-card-title">XML</h3>
+                  <div className="pricing-amount">
+                    <span className="price">$15</span>
+                    <span className="period">Starting</span>
+                  </div>
+                  <p className="pricing-description">
+                    Talk to us to get other formats of XMLs which fit to your
+                    existing applications.
+                  </p>
 
-                <button className="pricing-btn">
-                  <span className="btn-text">Add to Cart</span>
-                  <span className="btn-icon">
-                    <img src={arrowIcon} alt="Arrow" />
-                  </span>
-                </button>
-              </div>
+                  <ul className="pricing-features">
+                    <li>✓ 100% compatible with symbility</li>
+                    <li>✓ sketch within 4 hours</li>
+                    <li>✓ optional pdf</li>
+                    <li>✓ multiple format options</li>
+                    <li>✓ priority support</li>
+                  </ul>
 
-              {/* PDF Roof Report */}
-              <div className="pricing-card">
-                <div className="pricing-icon">📋</div>
-                <h3 className="pricing-card-title">PDF Roof Report</h3>
-                <div className="pricing-amount">
-                  <span className="currency">$</span>
-                  <span className="price">15</span>
-                  <span className="period">/order</span>
+                  <button className="pricing-btn">
+                    <span className="btn-text">Order Now</span>
+                    <span className="btn-icon">
+                      <img src={arrowIcon} alt="Arrow" />
+                    </span>
+                  </button>
                 </div>
-                <p className="pricing-description">
-                  ESX Reports provide precise roof measurement files for use in
-                  third-party use of roof.
-                </p>
 
-                <ul className="pricing-features">
-                  <li>✓ Custom report PDF's</li>
-                  <li>✓ Ready-to-use Jobsite photos</li>
-                  <li>✓ Attempt photo delivery</li>
-                  <li>✓ XML validity</li>
-                  <li>✓ One page measurement for overhead</li>
-                  <li>✓ Waste sheet optional</li>
-                </ul>
+                {/* PDF Roof Report */}
+                <div className="pricing-card">
+                  <div className="pricing-icon-img">
+                    <img src={pdfIcon} alt="PDF" />
+                  </div>
+                  <h3 className="pricing-card-title">PDF Roof Report</h3>
+                  <div className="pricing-amount">
+                    <span className="price">$15</span>
+                    <span className="period">Starting</span>
+                  </div>
+                  <p className="pricing-description">
+                    Customised PDFs to serve the individual needs of contractors
+                    and others.
+                  </p>
 
-                <button className="pricing-btn">
-                  <span className="btn-text">Add to Cart</span>
-                  <span className="btn-icon">
-                    <img src={arrowIcon} alt="Arrow" />
-                  </span>
-                </button>
+                  <ul className="pricing-features">
+                    <li>✓ Customised PDFs</li>
+                    <li>✓ Waste factor calculations</li>
+                    <li>✓ ESX addon</li>
+                    <li>✓ XML addon</li>
+                    <li>✓ Separate measurements for detaches</li>
+                    <li>✓ White label options</li>
+                  </ul>
+
+                  <button className="pricing-btn">
+                    <span className="btn-text">Order Now</span>
+                    <span className="btn-icon">
+                      <img src={arrowIcon} alt="Arrow" />
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -523,80 +580,94 @@ function Home() {
         {/* ================= Features Section ================= */}
         <section className="features-section">
           <div className="container">
-            <h2 className="features-main-title">
-              What Makes Our Roof Measurement Reports Different
-            </h2>
-            <p className="features-main-subtitle">
-              Our measurements offer fast, accurate, and affordable roof
-              reports. We reduce errors, streamline processes, and boost
-              confidence for contractors and builders nationwide.
-            </p>
-
-            <div className="features-grid">
-              {/* Feature 1 - Integrity */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">🎯</div>
-                <h3 className="feature-card-title">Integrity</h3>
-                <p className="feature-card-description">
-                  We believe in honest, reliable reporting. Every measurement is
-                  backed by verified processes that prioritize accuracy and
-                  ethical practices.
+            <div className="features-layout">
+              {/* Left Side - Title and Description */}
+              <div className="features-header">
+                <h2 className="features-main-title">
+                  What Makes Our Roof Measurement Reports Different
+                </h2>
+                <p className="features-main-subtitle">
+                  Our streamlined process ensures you get accurate roof
+                  measurements quickly and efficiently, every time.
                 </p>
+                <div className="features-stats">
+                  <div className="stats-avatars">
+                    {/* Add avatar images here if needed */}
+                  </div>
+                  <div className="stats-count">
+                    <strong>50K</strong>
+                    <p>Happy Clients</p>
+                  </div>
+                </div>
               </div>
 
-              {/* Feature 2 - Accuracy */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">✓</div>
-                <h3 className="feature-card-title">Accuracy</h3>
-                <p className="feature-card-description">
-                  Our reports deliver precise calculations down to the inch,
-                  ensuring you get every dimension right for confident bidding
-                  and planning.
-                </p>
-              </div>
+              {/* Right Side - 2-Column Grid */}
+              <div className="features-grid">
+                {/* Feature 1 - HD Imagery */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">📷</div>
+                  <h3 className="feature-card-title">HD Imagery</h3>
+                  <p className="feature-card-description">
+                    We use the latest premium imagery to deliver highly
+                    detailed, precise and reliable roof measurements you can
+                    trust for accurate planning and decisions.
+                  </p>
+                </div>
 
-              {/* Feature 3 - Innovation */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">💡</div>
-                <h3 className="feature-card-title">Innovation</h3>
-                <p className="feature-card-description">
-                  Leveraging the latest technology and industry best practices,
-                  we continuously improve how roof measurements are captured and
-                  delivered.
-                </p>
-              </div>
+                {/* Feature 2 - Accuracy */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">▶</div>
+                  <h3 className="feature-card-title">Accuracy</h3>
+                  <p className="feature-card-description">
+                    Each sketch goes with multi-layered quality checks to ensure
+                    the highest accuracy. We are the trusted choice of our
+                    clients for our commitment to precision.
+                  </p>
+                </div>
 
-              {/* Feature 4 - Customer-Invoicing */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">💰</div>
-                <h3 className="feature-card-title">Customer-Invoicing</h3>
-                <p className="feature-card-description">
-                  Transparent, straightforward pricing with no hidden fees.
-                  Enjoy seamless transactions tailored to your business workflow
-                  and budget needs.
-                </p>
-              </div>
+                {/* Feature 3 - Integrations */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">💡</div>
+                  <h3 className="feature-card-title">Integrations</h3>
+                  <p className="feature-card-description">
+                    Our systems are designed to easily connect with platforms of
+                    your choice, ensuring flexibility and scalability for your
+                    operations.
+                  </p>
+                </div>
 
-              {/* Feature 5 - Fast Delivery */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">⚡</div>
-                <h3 className="feature-card-title">Fast Delivery</h3>
-                <p className="feature-card-description">
-                  Get your roof report in just 4 hours. We understand time is
-                  money in construction, and we deliver without compromising on
-                  quality.
-                </p>
-              </div>
+                {/* Feature 4 - Enterprise Invoicing */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">📋</div>
+                  <h3 className="feature-card-title">Enterprise Invoicing</h3>
+                  <p className="feature-card-description">
+                    Add sub-users to your account and let your team place orders
+                    seamlessly while all payments and invoices are handled under
+                    your enterprise account.
+                  </p>
+                </div>
 
-              {/* Feature 6 - Support */}
-              <div className="feature-card">
-                <div className="feature-card-icon red">🤝</div>
-                <h3 className="feature-card-title">Support</h3>
-                <p className="feature-card-description">
-                  Our expert support team is available 24/7 to assist you with
-                  any questions, ensuring a smooth experience from order to
-                  delivery.
-                </p>
+                {/* Feature 5 - Flat Pricing */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">💰</div>
+                  <h3 className="feature-card-title">Flat Pricing</h3>
+                  <p className="feature-card-description">
+                    No roof size limits for commercial or residential
+                    properties. Enjoy transparent, fair pricing with a flat rate
+                    applied to every sketch.
+                  </p>
+                </div>
+
+                {/* Feature 6 - Support */}
+                <div className="feature-card">
+                  <div className="feature-card-icon red">💬</div>
+                  <h3 className="feature-card-title">Support</h3>
+                  <p className="feature-card-description">
+                    Our support team is available 24/7 via chat and email, with
+                    a dedicated comment window on every order to share remarks
+                    until it's closed.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -605,65 +676,97 @@ function Home() {
         {/* ================= Blog Section ================= */}
         <section className="blog-section">
           <div className="container">
-            <h2 className="blog-main-title">
-              Insights, Ideas, and Industry Trends That Matter
-            </h2>
-            <p className="blog-main-subtitle">
-              Explore expert guidance, real-world use cases, best practices, and
-              actionable tips to help you stay ahead in roofing, estimation, and
-              the construction industry.
-            </p>
+            <div className="blog-header-wrapper">
+              {/* Left Side - Title and Description */}
+              <div className="blog-header">
+                <h2 className="blog-main-title">
+                  Insights, Ideas, and Industry Trends That Matter
+                </h2>
+              </div>
 
-            <div className="blog-grid">
-              {/* Blog Card 1 */}
-              <div className="blog-card">
-                <div className="blog-image">
-                  <img src={blogImage1} alt="Common Roofing Issues" />
-                  <span className="blog-date">Dec 12th, 2024</span>
+              {/* Right Side - Subtitle */}
+              <div className="blog-subtitle-wrapper">
+                <p className="blog-main-subtitle">
+                  Explore expert insights, practical tips, and the latest trends
+                  across design, technology, and digital innovation—crafted to
+                  inform, inspire, and help you stay ahead.
+                </p>
+              </div>
+            </div>
+
+            <div className="blog-carousel-wrapper">
+              {/* Navigation Buttons */}
+              <button className="blog-nav-btn blog-nav-prev">
+                <span>&#8249;</span>
+              </button>
+
+              <div className="blog-grid">
+                {/* Blog Card 1 */}
+                <div className="blog-card">
+                  <div className="blog-image">
+                    <img src={blogImage1} alt="Common Roofing Issues" />
+                    <div className="blog-meta">
+                      <div className="blog-author">
+                        <span className="author-name">Oliva Ryfe</span>
+                        <span className="blog-date">20 Jan 2025</span>
+                      </div>
+                      <span className="blog-category">Roofing</span>
+                    </div>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      Common Roofing Issues Every Property Owner Should Identify
+                      Early
+                    </h3>
+                    <p className="blog-description">
+                      Identify early roofing problems like leaks, cracks, and
+                      wear to prevent costly repairs and protect your property's
+                      structure long-term.
+                    </p>
+                    <Link to="/blogs/1" className="blog-btn">
+                      <span className="btn-text">Read More</span>
+                      <span className="btn-icon">
+                        <img src={arrowIcon} alt="Arrow" />
+                      </span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="blog-content">
-                  <h3 className="blog-title">
-                    Common Roofing Issues Every Property Owner Should Identify
-                    Early
-                  </h3>
-                  <p className="blog-description">
-                    Detecting early roof issues, like leaks, shingles, and wear,
-                    prevents costly repairs and extends roof lifespan with
-                    timely maintenance.
-                  </p>
-                  <button className="blog-btn">
-                    <span className="btn-text">Read More</span>
-                    <span className="btn-icon">
-                      <img src={arrowIcon} alt="Arrow" />
-                    </span>
-                  </button>
+
+                {/* Blog Card 2 */}
+                <div className="blog-card">
+                  <div className="blog-image">
+                    <img src={blogImage2} alt="Roof Inspections" />
+                    <div className="blog-meta">
+                      <div className="blog-author">
+                        <span className="author-name">Oliva Ryfe</span>
+                        <span className="blog-date">20 Jan 2025</span>
+                      </div>
+                      <span className="blog-category">Roofing</span>
+                    </div>
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">
+                      How Regular Roof Inspections Prevent Costly Structural
+                      Damage
+                    </h3>
+                    <p className="blog-description">
+                      Regular roof inspections catch hidden damage early,
+                      preventing leaks, structural issues, and expensive repairs
+                      over time.
+                    </p>
+                    <Link to="/blogs/2" className="blog-btn">
+                      <span className="btn-text">Read More</span>
+                      <span className="btn-icon">
+                        <img src={arrowIcon} alt="Arrow" />
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              {/* Blog Card 2 */}
-              <div className="blog-card">
-                <div className="blog-image">
-                  <img src={blogImage2} alt="Roof Inspections" />
-                  <span className="blog-date">Dec 11th, 2024</span>
-                </div>
-                <div className="blog-content">
-                  <h3 className="blog-title">
-                    How Regular Roof Inspections Prevent Costly Structural
-                    Damage
-                  </h3>
-                  <p className="blog-description">
-                    Regular roof inspections catch small defects early,
-                    preventing major structural issues, ensuring safety and
-                    long-term roof performance.
-                  </p>
-                  <button className="blog-btn">
-                    <span className="btn-text">Read More</span>
-                    <span className="btn-icon">
-                      <img src={arrowIcon} alt="Arrow" />
-                    </span>
-                  </button>
-                </div>
-              </div>
+              <button className="blog-nav-btn blog-nav-next">
+                <span>&#8250;</span>
+              </button>
             </div>
           </div>
         </section>
@@ -713,6 +816,9 @@ function Home() {
                   </li>
                   <li>
                     <Link to="/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link to="/blogs">Blogs</Link>
                   </li>
                   <li>
                     <Link to="/pricing">Pricing</Link>

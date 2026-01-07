@@ -18,6 +18,9 @@ function About() {
             <Link to="/about" className="nav-link active">
               About Us
             </Link>
+            <Link to="/blogs" className="nav-link">
+              Blogs
+            </Link>
             <Link to="/pricing" className="nav-link">
               Pricing
             </Link>

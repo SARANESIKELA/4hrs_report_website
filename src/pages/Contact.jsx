@@ -41,6 +41,9 @@ function Contact() {
             <Link to="/about" className="nav-link">
               About Us
             </Link>
+            <Link to="/blogs" className="nav-link">
+              Blogs
+            </Link>
             <Link to="/pricing" className="nav-link">
               Pricing
             </Link>

@@ -18,6 +18,9 @@ function Pricing() {
             <Link to="/about" className="nav-link">
               About Us
             </Link>
+            <Link to="/blogs" className="nav-link">
+              Blogs
+            </Link>
             <Link to="/pricing" className="nav-link active">
               Pricing
             </Link>
@@ -186,8 +189,8 @@ function Pricing() {
             <div className="faq-item">
               <h4>What's included in the 4-hour delivery?</h4>
               <p>
-                All plans include professional roof measurements delivered within
-                4 hours or less, depending on your selected plan.
+                All plans include professional roof measurements delivered
+                within 4 hours or less, depending on your selected plan.
               </p>
             </div>
             <div className="faq-item">
